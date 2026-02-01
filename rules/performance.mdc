@@ -1,0 +1,33 @@
+---
+description: 上下文与复杂任务处理策略
+alwaysApply: false
+---
+
+# Performance Optimization
+
+## Context Window Management
+
+Avoid last 20% of context window for:
+- Large-scale refactoring
+- Feature implementation spanning multiple files
+- Debugging complex interactions
+
+Lower context sensitivity tasks:
+- Single-file edits
+- Independent utility creation
+- Documentation updates
+- Simple bug fixes
+
+## Complex Task Handling
+
+For complex tasks requiring deep reasoning:
+1. Break down into smaller subtasks
+2. Use Plan mode for structured approach when available
+3. Process incrementally to avoid context overflow
+4. Consider split analysis for diverse perspectives
+
+## General Guidelines
+
+- Keep MCP servers under 10 per project to preserve context
+- Use appropriate model for task complexity
+- Prefer incremental changes over large monolithic edits
