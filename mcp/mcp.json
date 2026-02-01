@@ -1,0 +1,69 @@
+{
+  "mcpServers": {
+    "memory": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-memory"],
+      "description": "Persistent memory across sessions"
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "{{USER_HOME}}"],
+      "description": "Filesystem operations - user home (global)"
+    },
+    "context7": {
+      "command": "npx",
+      "args": ["-y", "@context7/mcp-server"],
+      "description": "Live documentation lookup"
+    },
+    "firecrawl-mcp": {
+      "command": "firecrawl-mcp",
+      "env": {
+        "FIRECRAWL_API_KEY": "YOUR_FIRECRAWL_API_KEY_HERE"
+      }
+    },
+    "github": {
+      "command": "{{PYTHON_PATH}}",
+      "args": ["-m", "mcp_server_git", "--repository", "{{GIT_REPO_PATH}}"]
+    },
+    "Sequential Thinking": {
+      "url": "https://mcpmarket.cn/mcp/a60aecaa274067fde033a169",
+      "headers": {}
+    },
+    "MarkItDown MCP": {
+      "url": "https://mcpmarket.cn/mcp/35926675c793d596bf9b74fc",
+      "headers": {}
+    },
+    "Fetch ": {
+      "url": "https://mcpmarket.cn/mcp/4a1734c5066c2e4405d827c6",
+      "headers": {}
+    },
+    "Jina": {
+      "url": "https://mcpmarket.cn/mcp/b98dabe4cfef03f4cde4a773",
+      "headers": {}
+    },
+    "@magicuidesign/mcp": {
+      "command": "npx",
+      "args": ["-y", "@magicuidesign/mcp@latest"]
+    },
+    "arXiv论文": {
+      "url": "https://mcpmarket.cn/mcp/31fac35d1841c9d7ac0c6026",
+      "headers": {}
+    },
+    "Office Word": {
+      "url": "https://mcpmarket.cn/mcp/1343d6c8808dbe93371ebb86",
+      "headers": {}
+    },
+    "git": {
+      "command": "{{PYTHON_PATH}}",
+      "args": ["-m", "mcp_server_git", "--repository", "{{GIT_REPO_PATH}}"]
+    },
+    "data_visualization": {
+      "url": "https://mcpmarket.cn/mcp/7726bff064895895051ef121",
+      "headers": {}
+    },
+    "BioMCP": {
+      "url": "https://mcpmarket.cn/mcp/daa83f6057d8b8685de9acc9",
+      "headers": {}
+    }
+  }
+}
