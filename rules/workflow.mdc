@@ -1,0 +1,55 @@
+---
+description: Superpowers-style workflow for all coding tasks – clarify goals, write plans, then implement and verify.
+globs: "**/*"
+alwaysApply: false
+---
+
+# Workflow Requirements (Superpowers-style)
+
+## 1. Clarify Before Coding (Brainstorm)
+
+- 在开始写代码/改脚本之前，先用几句话说明：
+  - **目标**：这次想达成什么结果？（业务/科研层面）
+  - **范围**：会改哪些模块/脚本？有哪些不在本次范围内？
+  - **约束**：时间、计算资源（GPU/CPU）、已有接口/文件格式等。
+- 对于复杂任务（跨多个文件、多个阶段），建议先开一个文档或 `.plan.md` 记录这些信息。
+
+## 2. 写 Plan 再实现（Write Plan）
+
+- 对**非琐碎改动**（> 1–2 个函数、涉及流程/性能/资源占用）必须先写一个**实现计划**，可以是：
+  - 项目根或 `.cursor/plans/` 下的 `*.plan.md`；
+  - 或现有计划文件中的一个新章节。
+- 建议 Plan 至少包含：
+  1. **目标**：一句话说明要达成什么效果。
+  2. **步骤/TODO**：拆成 3–7 个可执行的小步骤（2–10 分钟粒度）。
+  3. **验证方式**：怎么判断做对了？（测试命令、日志指标、性能对比等）。
+- 在实现过程中，优先按 TODO 推进，并及时更新状态（pending / in_progress / completed）。
+
+## 3. 执行 Plan（Execute Plan）
+
+- 实现时遵循以下原则：
+  - **小步快跑**：一次只完成一个 TODO，小范围修改后就运行对应验证（测试、脚本、日志检查）。
+  - **可回滚**：每个 TODO 完成后代码处于可运行/可回滚状态（不要一次性大改几十个文件）。
+- 对于涉及**性能/资源优化**的任务（如 GPU/CPU 绑核、并行度调整）：
+  - Plan 里必须写清楚**对比基线**（如 ns/day、CPU 利用率）。
+  - 实现后要按 Plan 中的验证步骤，记录前后对比结果。
+
+## 4. 验证与总结（Verify & Document）
+
+- 每次较大改动完成后：
+  - 至少执行一次完整的验证流程（单测/集成测/benchmark/日志检查）。
+  - 对关键结果（特别是**性能数据**、资源占用、潜在风险）写入相应的文档或 README。
+- 对于 pipeline 类项目（如 `protein_filter_lib`）：
+  - 建议在 `docs/` 或 `PART*_WORKFLOW_SUMMARY.md` 中同步更新流程与经验结论。
+
+---
+
+## Quick Reference
+
+| 阶段            | 动作                                   |
+|-----------------|----------------------------------------|
+| Clarify         | 先讲清目标/范围/约束，不急着写代码     |
+| Write Plan      | 为非琐碎改动写 `.plan.md` + TODO + 验证 |
+| Execute Plan    | 按 TODO 小步实现，每步都跑验证         |
+| Verify & Record | 验证通过后，把结论/经验写进文档/README  |
+
