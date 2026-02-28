@@ -8,7 +8,7 @@ Cursor IDE 全局配置：Rules、MCP、Skills。支持跨设备迁移。
 cursor-config/
 ├── rules/          # Cursor 规则 (.mdc) – 包含 testing/security/workflow 等
 ├── mcp/            # MCP 配置（已脱敏）
-├── skills/         # Skills（包括 coding-workflows、brainstorming、write-plan-generic 等）
+├── skills/         # Skills（包括 code-review-expert、brainstorming、write-plan-generic 等）
 └── scripts/        # 安装脚本
 ```
 
@@ -64,6 +64,7 @@ chmod +x install.sh
 - `skills/write-plan-generic/`：帮助把想法拆成可执行的 `.plan.md` 计划。\n\
 - `skills/execute-plan-generic/`：按 TODO 推进计划并更新状态。\n\
 - `skills/part3-performance-analysis/`：针对 Part3 MD（多 GPU/CPU 绑核）的性能分析模板，可在类似 `protein_filter_lib` 的项目中复用。
+- `skills/code-review-expert/`：对当前 git 变更做专家级代码审查（SOLID、安全、性能、错误处理、边界条件），来源 [sanyuan0704/code-review-expert](https://github.com/sanyuan0704/code-review-expert)。
 
 在新的仓库或服务器上安装本配置后，建议：
 
